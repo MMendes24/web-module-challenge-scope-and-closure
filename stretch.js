@@ -39,4 +39,16 @@ function createBase(baseNumber) {
   //big difference in this case is that addSix allows us to call the variable with that parameter already known as an argument identically every time, rather than
   //always having to enter six. Closure is the reason this works, because return baseNumber + x; is able to perform even though "return function(x)" has terminated. 
 
-  
+  /*Research the differences between functional programming and object oriented programming. 
+  Then, describe the pros and cons of functional programming vs object-oriented programming. 
+  This is a common interview question and great practice!*/
+
+  /*Object-oriented programming (OOP) is based on the concept of "objects", and the basic elements are objects and methods (a function that lives inside of an object.)
+  It's great when you have a relatively fixed set of operations, but your data is mutable and expanding. In OOP you primarily reuse the same operations on different
+  things, adding new classes which implement existing methods. Old classes tend to be left alone. It uses loops for iteration and follows the imperative model of 
+  programming. The order in which tasks get executed matters. 
+
+  Functional Languages are good when you have a fixed set of things, and as the need arises, you primarily want to add new ways of operating on those things. Your
+  main goals in functional languages tend to be related to manipulating the same things in an ever growing number of ways. Its main elements are variables and functions. 
+  FLs primarily use recursion to iterate through data and statements in FLs tend do not need to be executed in a particular order. It follows the declarative 
+  programming model. Importance is not given to data, but to functions. FL are less secure because there is no way to hide data. 
