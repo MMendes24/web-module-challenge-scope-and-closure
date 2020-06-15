@@ -37,8 +37,9 @@ processFirstItem(['foo', 'boo',], (str) => str + str)
  * doesn't retain any memory it was called previously. 
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- * Counter1 would be preferable in any scenario in which we needed count to not interfere with other functions, and wanted to call on it only when needed. Counter2
- * might be preferable if for some reason we needed the count variable to be global. 
+ * Counter1 would be preferable in any scenario in which we needed count to not interfere with other functions and remain a private variable, and we wanted to call 
+ * // on it only when needed. Counter2 might be preferable if for some reason we needed the count variable to be global and accessible by any function (maybe if we
+ * we adding the scores together from many different games?). 
  *
 */
 
@@ -90,8 +91,8 @@ function counter2() {
 
 // a. Closure is used at 'return function()' where the entire function is terminated following the return statement. 
 // b. Nothing changes but the random number generated on each successive roll. However, one could create a new named function 
-// e.g. const marsRoll = personaldice("Mars")
-// c. 
+// e.g. const marsRoll = personalDice("Mars") which would operate separately with its own hidden newRoll variable.
+// c. newRoll's lexical scope is inner, it can access variables inside the inner function, the outer function, and the global scope. 
 
 /* Task 2: inning() 
 
