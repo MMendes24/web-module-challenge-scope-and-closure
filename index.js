@@ -29,14 +29,16 @@ processFirstItem(['foo', 'boo',], (str) => str + str)
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
- * The entire function is return in counter 1.
+ * Count exists only inside the function, while in counter2 the count variable is global.
  * 
  * 2. Which of the two uses a closure? How can you tell?
  * 
- * Counter 1, because it returns data and remembers it even after the function has closed.
+ * Counter 1, because it returns data and remembers it even after the function has closed. In counter2, the function simply updates the global variable 'count'
+ * doesn't retain any memory it was called previously. 
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- * 
+ * Counter1 would be preferable in any scenario in which we needed count to not interfere with other functions, and wanted to call on it only when needed. Counter2
+ * might be preferable if for some reason we needed the count variable to be global. 
  *
 */
 
@@ -57,13 +59,47 @@ function counter2() {
   return count++;
 }
 
+// Edit the ReadMe file with your answers.
+
+// In your own words, define closure (1-2 sentences).
+
+// A closure is a function that has access to its outer function scope even after the outer function has returned. This means a closure can remember and access 
+// variables and arguments of its outer function even after the function has finished. This not entirely my own words, but it's the explanation that makes by far
+// the most sense to me. 
+
+
+// Study the following code, then answer the questions below.
+
+// function personalDice(name){
+//   return function(){
+//       // generate random number between 1 and 6
+//     const newRoll = Math.floor(Math.random() * 6);
+//     console.log(`${name} rolled a ${newRoll}`)
+//   }
+// }
+
+// const dansRoll = personalDice("Dan");
+
+// const zoesRoll = personalDice("Zoe");
+
+
+// dansRoll();
+// dansRoll();
+// a. Where is closure used in this code? How can you tell? b. Compare and contrast calling dansRoll the first and second time. 
+//What is always the same? What could change? c. What is the lexical scope of newRoll?
+
+// a. Closure is used at 'return function()' where the entire function is terminated following the return statement. 
+// b. Nothing changes but the random number generated on each successive roll. However, one could create a new named function 
+// e.g. const marsRoll = personaldice("Mars")
+// c. 
 
 /* Task 2: inning() 
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
 function inning(){
-  return Math.round(Math.random()) * Math.round(Math.random());
+  let score = Math.floor(Math.random() * 3);
+  return score
 }
 
 /* Task 3: finalScore()
@@ -94,9 +130,6 @@ function finalScore(callback, number){
     "Away": score2
   }
 }
-
-finalScore(inning, 9)
-
 
 
 /* Task 4: 
