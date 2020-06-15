@@ -122,8 +122,6 @@ function finalScore(callback, number){
   let score2 = 0
   for(i = 0; i < number; i++){
     score1 = score1 + callback()
-  }
-  for(i = 0; i < number; i++){
     score2 = score2 + callback()
   }
   return totalScore = {
