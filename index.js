@@ -34,7 +34,7 @@ processFirstItem(['foo', 'boo',], (str) => str + str)
  * 2. Which of the two uses a closure? How can you tell?
  * 
  * Counter 1, because it returns data and remembers it even after the function has closed. In counter2, the function simply updates the global variable 'count'
- * doesn't retain any memory it was called previously. 
+ * and doesn't retain any memory it was called previously. 
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  * Counter1 would be preferable in any scenario in which we needed count to not interfere with other functions and remain a private variable, and we wanted to call 
