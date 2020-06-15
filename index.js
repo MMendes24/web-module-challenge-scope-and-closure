@@ -20,6 +20,7 @@ function processFirstItem(stringList, callback) {
 
 // ⭐️ Example Challenge END ⭐️
 
+processFirstItem(['foo', 'boo',], (str) => str + str)
 
 ///// M V P ///////
 
@@ -28,9 +29,14 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * The entire function is return in counter 1.
+ * 
  * 2. Which of the two uses a closure? How can you tell?
  * 
+ * Counter 1, because it returns data and remembers it even after the function has closed.
+ * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ * 
  *
 */
 
